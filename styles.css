@@ -1,0 +1,372 @@
+/* Reset and Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Updates */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent; /* Removed black line/bar - fully transparent */
+  z-index: 1000;
+  padding: 0.5rem 0;
+  /* Removed backdrop-filter to avoid any blur/overlay */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between language selector and Sign In */
+}
+
+.language-selector {
+  background: rgba(0, 0, 0, 0.7); /* Slight dark bg for visibility on hero */
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  border-radius: 2px; /* Subtle rounding */
+}
+
+.signin-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s; /* Hover effect */
+}
+
+.signin-btn:hover {
+  background: #f40612;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"></svg>'); /* Fallback */
+  background-size: cover;
+  background-position: center;
+  margin-top: 60px; /* Space for transparent header */
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.email-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.email-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.email-input {
+  flex: 1;
+  background: #333;
+  border: none;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-width: 250px;
+}
+
+.start-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #f40612;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+/* Trending Now */
+.trending {
+  padding: 4rem 0;
+  background: #000; /* Fully black */
+}
+
+.trending h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.trending-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+}
+
+.trending-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.trending-row::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.card {
+  width: 200px; /* Adjusted width so ~5 fit in 1200px container */
+  position: relative;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%; /* Full width of card */
+  height: 300px; /* Fixed height maintaining ~2:3 aspect ratio */
+  border-radius: 4px;
+  object-fit: cover; /* Crop to fit without distortion */
+  display: block;
+}
+
+.rank {
+  position: absolute;
+  bottom: 10px; /* Left lower corner */
+  left: 10px;
+  background: transparent; /* No box/background */
+  color: #000; /* Black text */
+  font-weight: bold;
+  font-size: 24px; /* Larger and more visible */
+  z-index: 2;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff; /* White border/outline */
+}
+
+/* Reasons to Join */
+.reasons {
+  padding: 4rem 0;
+  background: #000; /* Fully black */
+}
+
+.reasons h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
+  gap: 2rem;
+}
+
+.reason-card {
+  text-align: center;
+  padding: 1.5rem; /* Reduced padding */
+  background: #000; /* Base black background */
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px; /* More curved corners */
+}
+
+.reason-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 102, 204, 0.3), rgba(255, 20, 147, 0.3)); 
+  z-index: 1;
+}
+
+.reason-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.reason-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.reason-card p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* FAQs */
+.faqs {
+  padding: 4rem 0;
+  background: #000; /* Fully black */
+}
+
+.faqs h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.faq-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.faq-list li {
+  margin-bottom: 0.5rem;
+}
+
+.faq-list a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.faq-list a:hover {
+  background: #333;
+}
+
+.faqs p {
+  text-align: center;
+  color: #ccc;
+}
+
+.faqs a {
+  color: #e50914;
+}
+
+/* Footer CTA */
+.footer-cta {
+  padding: 4rem 0;
+  background: #000;
+  text-align: center;
+}
+
+.footer-cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-cta .email-form {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.footer-cta p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  padding: 2rem 0;
+  border-top: 1px solid #333;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #757575;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
